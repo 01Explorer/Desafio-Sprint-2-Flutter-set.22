@@ -1,4 +1,5 @@
-import 'package:desafio_sprint2/screens/splash_screen.dart';
+import 'package:desafio_sprint2/screens/splash.dart';
+import 'package:desafio_sprint2/screens/welcome.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,9 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'TT Norms Pro',
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }
