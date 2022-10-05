@@ -106,6 +106,47 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ],
             ),
+          ),
+          SizedBox(
+            height: 60,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 18, left: 24),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: ((context, index) {
+                  return Container(
+                    margin: const EdgeInsets.only(top: 4, bottom: 4, right: 8),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black12,
+                            spreadRadius: 1,
+                            blurRadius: 1,
+                            offset: Offset(0, 1))
+                      ],
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 16, right: 16, top: 8, bottom: 8),
+                        child: Text(
+                          'Item Combo $index',
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+              ),
+            ),
           )
         ],
       ),

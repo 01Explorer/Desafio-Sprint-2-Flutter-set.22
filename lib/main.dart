@@ -1,3 +1,4 @@
+import 'package:desafio_sprint2/screens/home.dart';
 import 'package:desafio_sprint2/screens/splash.dart';
 import 'package:desafio_sprint2/screens/welcome.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,9 @@ class MyApp extends StatelessWidget {
             ),
         primarySwatch: Colors.blue,
       ),
-      home: const WelcomeScreen(),
+      home: HomeScreen(
+        consumerName: 'Gabriel',
+      ),
     );
   }
 }
