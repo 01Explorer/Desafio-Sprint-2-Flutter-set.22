@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 
 class WelcomeAuthenticationButton extends StatelessWidget {
   final String message;
+  final Widget destination;
   const WelcomeAuthenticationButton({
     Key? key,
     required this.width,
     required this.message,
+    required this.destination,
   }) : super(key: key);
 
   final double width;
@@ -18,7 +20,7 @@ class WelcomeAuthenticationButton extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const AuthenticationScreen(),
+          builder: (context) => destination,
         ),
       ),
       child: Container(

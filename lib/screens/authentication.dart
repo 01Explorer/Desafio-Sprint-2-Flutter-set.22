@@ -1,6 +1,7 @@
 import 'package:desafio_sprint2/components/welcome_auth_button.dart';
 import 'package:desafio_sprint2/components/welcome_auth_image.dart';
-import 'package:desafio_sprint2/screens/splash.dart';
+import 'package:desafio_sprint2/screens/home.dart';
+import 'package:desafio_sprint2/screens/welcome.dart';
 import 'package:flutter/material.dart';
 
 class AuthenticationScreen extends StatefulWidget {
@@ -11,9 +12,9 @@ class AuthenticationScreen extends StatefulWidget {
 }
 
 class _AuthenticationScreenState extends State<AuthenticationScreen> {
+  final TextEditingController _textController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final TextEditingController _textController = TextEditingController();
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
@@ -69,6 +70,9 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
               child: WelcomeAuthenticationButton(
                 width: width,
                 message: 'Start Ordering',
+                destination: HomeScreen(
+                  consumerName: _textController.text,
+                ),
               ),
             )
           ],
