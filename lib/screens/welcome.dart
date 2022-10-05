@@ -1,6 +1,5 @@
 import 'package:desafio_sprint2/components/welcome_auth_button.dart';
 import 'package:desafio_sprint2/components/welcome_auth_image.dart';
-import 'package:desafio_sprint2/screens/splash.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -30,7 +29,6 @@ class WelcomeScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
-                color: Color.fromRGBO(39, 33, 77, 1),
               ),
             ),
           ),
