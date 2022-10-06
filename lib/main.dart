@@ -1,5 +1,6 @@
 import 'package:desafio_sprint2/components/combo_food.dart';
 import 'package:desafio_sprint2/models/food.dart';
+import 'package:desafio_sprint2/screens/add_basket.dart';
 import 'package:desafio_sprint2/screens/home.dart';
 import 'package:desafio_sprint2/screens/splash.dart';
 import 'package:desafio_sprint2/screens/welcome.dart';
@@ -25,7 +26,13 @@ class MyApp extends StatelessWidget {
             ),
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(consumerName: 'Gabriel'),
+      home: AddToBasket(
+        item: Food(
+          name: 'Honey lime combo',
+          price: 2000,
+          imagePath: 'assets/images/Honey-Lime.png',
+        ),
+      ),
     );
   }
 }

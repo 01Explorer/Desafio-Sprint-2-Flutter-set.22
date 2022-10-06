@@ -1,3 +1,4 @@
+import 'package:desafio_sprint2/components/add_remove_button.dart';
 import 'package:desafio_sprint2/models/food.dart';
 import 'package:flutter/material.dart';
 
@@ -82,7 +83,7 @@ class _ComboFoodState extends State<ComboFood> {
                   child: Row(
                     children: [
                       Image.asset(
-                        'assets/images/currency.png',
+                        'assets/images/currency_orange.png',
                         width: 16,
                         height: 12.8,
                       ),
@@ -99,16 +100,8 @@ class _ComboFoodState extends State<ComboFood> {
                     ],
                   ),
                 ),
-                InkWell(
-                  child: Container(
-                    width: 24,
-                    height: 24,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(255, 242, 231, 1),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Image.asset('assets/images/plus_signal.png'),
-                  ),
+                const AddRemoveButton(
+                  imagePath: 'assets/images/plus_signal.png',
                 )
               ],
             ),

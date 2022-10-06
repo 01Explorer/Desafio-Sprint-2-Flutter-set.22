@@ -239,14 +239,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   FruitSalad(
                     item: Food(
                       name: 'Honey lime combo',
-                      price: 2000,
+                      price: 10000,
                       imagePath: 'assets/images/quinoa-and-red-fruit-salad.png',
                     ),
                   ),
                   FruitSalad(
                     item: Food(
                       name: 'Honey lime combo',
-                      price: 2000,
+                      price: 10000,
                       imagePath: 'assets/images/Tropical-Fruit-Salad.png',
                     ),
                     index: 1,
@@ -254,7 +254,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   FruitSalad(
                     item: Food(
                       name: 'Honey lime combo',
-                      price: 2000,
+                      price: 10000,
                       imagePath: 'assets/images/Kiwiberry-Fruit-Salad.png',
                     ),
                     index: 2,

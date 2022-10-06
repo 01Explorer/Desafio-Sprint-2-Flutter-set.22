@@ -95,7 +95,7 @@ class _FruitSaladState extends State<FruitSalad> {
                   child: Row(
                     children: [
                       Image.asset(
-                        'assets/images/currency.png',
+                        'assets/images/currency_orange.png',
                         width: 16,
                         height: 12.8,
                       ),
