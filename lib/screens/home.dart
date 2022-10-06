@@ -1,4 +1,5 @@
 import 'package:desafio_sprint2/components/combo_food.dart';
+import 'package:desafio_sprint2/components/fruit_salad.dart';
 import 'package:desafio_sprint2/models/food.dart';
 import 'package:flutter/material.dart';
 
@@ -180,11 +181,84 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   ComboFood(
                     item: Food(
-                      name: 'Berry fruit combo',
+                      name: 'Berry mango combo',
                       price: 2000,
                       imagePath: 'assets/images/Berry-Fruit.png',
                     ),
                   ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 40, left: 24),
+            child: SizedBox(
+              width: 250,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    'Hottest',
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'Popular',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  Text(
+                    'New Combo',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 6, left: 24),
+            child: Image.asset(
+              'assets/images/line_highlight.png',
+              width: 38,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 24, top: 24),
+            child: SizedBox(
+              height: 150,
+              child: ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                children: [
+                  FruitSalad(
+                    item: Food(
+                      name: 'Honey lime combo',
+                      price: 2000,
+                      imagePath: 'assets/images/quinoa-and-red-fruit-salad.png',
+                    ),
+                  ),
+                  FruitSalad(
+                    item: Food(
+                      name: 'Honey lime combo',
+                      price: 2000,
+                      imagePath: 'assets/images/Tropical-Fruit-Salad.png',
+                    ),
+                    index: 1,
+                  ),
+                  FruitSalad(
+                    item: Food(
+                      name: 'Honey lime combo',
+                      price: 2000,
+                      imagePath: 'assets/images/Kiwiberry-Fruit-Salad.png',
+                    ),
+                    index: 2,
+                  )
                 ],
               ),
             ),
