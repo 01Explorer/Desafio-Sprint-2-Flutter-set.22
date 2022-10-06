@@ -46,6 +46,7 @@ class _ComboFoodState extends State<ComboFood> {
                         ? Icons.favorite_rounded
                         : Icons.favorite_border,
                     color: Color.fromRGBO(255, 164, 81, 1),
+                    size: 20,
                   ),
                 ),
               ),
@@ -59,10 +60,15 @@ class _ComboFoodState extends State<ComboFood> {
           ),
           Padding(
             padding: EdgeInsets.only(top: 13),
-            child: Text(
-              widget.item.name,
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
+            child: SizedBox(
+              width: 152,
+              height: 18,
+              child: Text(
+                widget.item.name,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),
