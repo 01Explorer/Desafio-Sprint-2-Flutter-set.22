@@ -1,3 +1,5 @@
+import 'package:desafio_sprint2/components/combo_food.dart';
+import 'package:desafio_sprint2/models/food.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -145,6 +147,45 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   );
                 }),
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 24, top: 36),
+            child: Text(
+              'Recommended Combo',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 24, top: 6),
+            child: Image.asset('assets/images/line_highlight.png'),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 13, left: 24),
+            child: SizedBox(
+              height: 183,
+              child: ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                children: [
+                  ComboFood(
+                    item: Food(
+                      name: 'Honey lime combo',
+                      price: 2000,
+                      imagePath: 'assets/images/Honey-Lime.png',
+                    ),
+                  ),
+                  ComboFood(
+                    item: Food(
+                      name: 'Berry fruit combo',
+                      price: 2000,
+                      imagePath: 'assets/images/Berry-Fruit.png',
+                    ),
+                  ),
+                ],
               ),
             ),
           )

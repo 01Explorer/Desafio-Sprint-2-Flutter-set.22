@@ -1,3 +1,5 @@
+import 'package:desafio_sprint2/components/combo_food.dart';
+import 'package:desafio_sprint2/models/food.dart';
 import 'package:desafio_sprint2/screens/home.dart';
 import 'package:desafio_sprint2/screens/splash.dart';
 import 'package:desafio_sprint2/screens/welcome.dart';
@@ -23,9 +25,7 @@ class MyApp extends StatelessWidget {
             ),
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(
-        consumerName: 'Gabriel',
-      ),
+      home: HomeScreen(consumerName: 'Gabriel'),
     );
   }
 }
