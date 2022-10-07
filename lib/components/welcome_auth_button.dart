@@ -7,12 +7,9 @@ class WelcomeAuthenticationButton extends StatelessWidget {
   final Widget destination;
   const WelcomeAuthenticationButton({
     Key? key,
-    required this.width,
     required this.message,
     required this.destination,
   }) : super(key: key);
-
-  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +21,6 @@ class WelcomeAuthenticationButton extends StatelessWidget {
         ),
       ),
       child: Container(
-        width: width * 0.89,
         height: 56,
         decoration: const BoxDecoration(
           color: Color.fromRGBO(255, 164, 81, 1),

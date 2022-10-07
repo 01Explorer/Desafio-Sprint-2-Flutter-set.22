@@ -20,10 +20,8 @@ class ContainerImage extends StatelessWidget {
       color: const Color.fromRGBO(255, 164, 81, 1),
       child: Padding(
         padding:
-            const EdgeInsets.only(top: 131, bottom: 34, left: 35, right: 39),
-        child: Image.asset(
-          imagePath,
-        ),
+            const EdgeInsets.only(left: 35, right: 39, top: 70, bottom: 30),
+        child: Image.asset(imagePath),
       ),
     );
   }
