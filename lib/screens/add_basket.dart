@@ -217,34 +217,38 @@ class _AddToBasketState extends State<AddToBasket> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              width: 48,
-                              height: 48,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Color.fromRGBO(255, 247, 240, 1),
-                              ),
-                              child: Icon(
-                                Icons.favorite_border_rounded,
-                                color: Color.fromRGBO(255, 164, 81, 1),
-                              ),
-                            ),
-                            Container(
-                              width: 215,
-                              height: 58,
-                              decoration: BoxDecoration(
-                                color: Color.fromRGBO(255, 164, 81, 1),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
+                            GestureDetector(
+                              child: Container(
+                                width: 48,
+                                height: 48,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Color.fromRGBO(255, 247, 240, 1),
+                                ),
+                                child: Icon(
+                                  Icons.favorite_border_rounded,
+                                  color: Color.fromRGBO(255, 164, 81, 1),
                                 ),
                               ),
-                              child: Center(
-                                child: Text(
-                                  'Add To Basket',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
+                            ),
+                            GestureDetector(
+                              child: Container(
+                                width: 215,
+                                height: 58,
+                                decoration: BoxDecoration(
+                                  color: Color.fromRGBO(255, 164, 81, 1),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Add To Basket',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                 ),
                               ),
