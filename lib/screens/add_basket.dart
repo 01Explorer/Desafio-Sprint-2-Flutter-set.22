@@ -13,6 +13,15 @@ class AddToBasket extends StatefulWidget {
 }
 
 class _AddToBasketState extends State<AddToBasket> {
+  final List<String> _teste = [
+    'Red Quinoa',
+    'Lime',
+    'Honey',
+    'Blueberries',
+    'Mango',
+    'Strawberries',
+    'Fresh Mint',
+  ];
   int quantity = 0;
   @override
   Widget build(BuildContext context) {
@@ -171,7 +180,7 @@ class _AddToBasketState extends State<AddToBasket> {
                         ),
                       ),
                       Container(
-                        height: 110,
+                        height: 130,
                         decoration: BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
@@ -181,30 +190,18 @@ class _AddToBasketState extends State<AddToBasket> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.only(top: 16),
-                          child: SizedBox(
-                            height: 84,
-                            child: GridView.count(
-                              crossAxisSpacing: 8,
-                              mainAxisSpacing: 2,
-                              crossAxisCount: 8,
-                              children: <Widget>[
-                                Container(
-                                  height: 28,
-                                  child: Text('Fresh Mint'),
-                                ),
-                                Container(
-                                  height: 28,
-                                  child: Text('Fresh Mint'),
-                                ),
-                                Container(
-                                  height: 28,
-                                  child: Text('Fresh Mint'),
-                                )
+                            padding: EdgeInsets.only(top: 16),
+                            child: Wrap(
+                              direction: Axis.horizontal,
+                              spacing: 6,
+                              runSpacing: 0,
+                              children: [
+                                for (var item in _teste)
+                                  Chip(
+                                    label: Text(item),
+                                  ),
                               ],
-                            ),
-                          ),
-                        ),
+                            )),
                       ),
                       const Padding(
                         padding: EdgeInsets.only(top: 14, right: 25),
