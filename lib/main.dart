@@ -2,6 +2,7 @@ import 'package:desafio_sprint2/components/combo_food.dart';
 import 'package:desafio_sprint2/models/food.dart';
 import 'package:desafio_sprint2/screens/add_basket.dart';
 import 'package:desafio_sprint2/screens/home.dart';
+import 'package:desafio_sprint2/screens/order_complete.dart';
 import 'package:desafio_sprint2/screens/order_list.dart';
 import 'package:desafio_sprint2/screens/splash.dart';
 import 'package:desafio_sprint2/screens/welcome.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
             ),
         primarySwatch: Colors.blue,
       ),
-      home: OrderListScreen(),
+      home: OrderComplete(),
     );
   }
 }
