@@ -44,9 +44,9 @@ class WelcomeScreen extends StatelessWidget {
               subMessage,
               textAlign: TextAlign.left,
               style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  color: Color.fromRGBO(93, 87, 126, 1)),
+                fontSize: 16,
+                color: Color.fromRGBO(93, 87, 126, 1),
+              ),
             ),
           ),
           const Padding(
