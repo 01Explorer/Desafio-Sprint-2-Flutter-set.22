@@ -1,15 +1,20 @@
 import 'package:desafio_sprint2/components/welcome_auth_button.dart';
 import 'package:desafio_sprint2/components/welcome_auth_image.dart';
+import 'package:desafio_sprint2/providers/configs.dart';
 import 'package:desafio_sprint2/screens/authentication.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  final String mainMessage = 'Get The Freshest Fruit Salad Combo';
+  final String subMessage =
+      'We deliver the best and freshest fruit salad in town. Order for a combo today!!!';
   const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
+    final Settings settings = Provider.of<Settings>(context);
+    settings.getSizes(context);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -18,38 +23,37 @@ class WelcomeScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ContainerImage(
-            height: height,
-            width: width,
+            height: settings.height,
+            width: settings.width,
             imagePath: 'assets/images/welcome_basket.png',
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 40, bottom: 8, left: 24, right: 88),
+          Padding(
+            padding: const EdgeInsets.only(top: 40, bottom: 8, left: 24),
             child: Text(
-              'Get The Freshest Fruit Salad Combo',
+              mainMessage,
               textAlign: TextAlign.left,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 24, right: 70),
+          Padding(
+            padding: const EdgeInsets.only(left: 24, right: 70),
             child: Text(
-              'We deliver the best and freshest fruit salad in town. Order for a combo today!!!',
+              subMessage,
               textAlign: TextAlign.left,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                   color: Color.fromRGBO(93, 87, 126, 1)),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 24, right: 24, top: 80),
+          const Padding(
+            padding: EdgeInsets.only(left: 24, right: 24, top: 80),
             child: WelcomeAuthenticationButton(
-              width: width,
               message: 'Let\'s Continue',
-              destination: const AuthenticationScreen(),
+              destination: AuthenticationScreen(),
             ),
           )
         ],
