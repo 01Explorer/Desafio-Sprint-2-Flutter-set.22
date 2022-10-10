@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ComboFood extends StatefulWidget {
   final Food item;
-  ComboFood({Key? key, required this.item}) : super(key: key);
+  const ComboFood({Key? key, required this.item}) : super(key: key);
 
   @override
   State<ComboFood> createState() => _ComboFoodState();
@@ -15,10 +15,10 @@ class _ComboFoodState extends State<ComboFood> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 23),
+      margin: const EdgeInsets.only(right: 23),
       width: 152,
       height: 183,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         boxShadow: [
           BoxShadow(
@@ -46,7 +46,7 @@ class _ComboFoodState extends State<ComboFood> {
                     _isfavorite == true
                         ? Icons.favorite_rounded
                         : Icons.favorite_border,
-                    color: Color.fromRGBO(255, 164, 81, 1),
+                    color: const Color.fromRGBO(255, 164, 81, 1),
                     size: 20,
                   ),
                 ),
@@ -60,21 +60,22 @@ class _ComboFoodState extends State<ComboFood> {
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(top: 13),
+            padding: const EdgeInsets.only(top: 13),
             child: SizedBox(
               width: 152,
               height: 18,
               child: Text(
                 widget.item.name,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 16, top: 8, right: 16, bottom: 18),
+            padding:
+                const EdgeInsets.only(left: 16, top: 8, right: 16, bottom: 18),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

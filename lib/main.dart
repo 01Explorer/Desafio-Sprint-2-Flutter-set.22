@@ -1,4 +1,5 @@
 import 'package:desafio_sprint2/providers/configs.dart';
+import 'package:desafio_sprint2/providers/initial_app.dart';
 import 'package:desafio_sprint2/screens/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,9 +14,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Provider.debugCheckInvalidValueType = null;
     return MultiProvider(
       providers: [
         Provider<Settings>(create: (_) => Settings()),
+        Provider<InitialState>(create: (_) => InitialState()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -26,7 +29,7 @@ class MyApp extends StatelessWidget {
                 displayColor: const Color.fromRGBO(39, 33, 77, 1),
               ),
         ),
-        home: WelcomeScreen(),
+        home: const WelcomeScreen(),
       ),
     );
   }

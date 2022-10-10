@@ -1,5 +1,3 @@
-import 'package:desafio_sprint2/screens/authentication.dart';
-import 'package:desafio_sprint2/screens/splash.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeAuthenticationButton extends StatelessWidget {
