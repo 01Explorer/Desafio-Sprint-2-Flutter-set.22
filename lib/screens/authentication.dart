@@ -1,8 +1,9 @@
-import 'package:desafio_sprint2/components/welcome_auth_button.dart';
+import 'package:desafio_sprint2/components/main_button.dart';
 import 'package:desafio_sprint2/components/welcome_auth_image.dart';
+import 'package:desafio_sprint2/providers/configs.dart';
 import 'package:desafio_sprint2/screens/home.dart';
-import 'package:desafio_sprint2/screens/welcome.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({Key? key}) : super(key: key);
@@ -13,11 +14,11 @@ class AuthenticationScreen extends StatefulWidget {
 
 class _AuthenticationScreenState extends State<AuthenticationScreen> {
   final TextEditingController _textController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-
+    final Settings settings = Provider.of<Settings>(context);
+    const String mainImagePath = 'assets/images/authentication_basket.png';
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -26,9 +27,9 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ContainerImage(
-              height: height,
-              width: width,
-              imagePath: 'assets/images/authentication_basket.png',
+              height: settings.height,
+              width: settings.width,
+              imagePath: mainImagePath,
             ),
             const Padding(
               padding: EdgeInsets.only(top: 40, bottom: 8, left: 24, right: 88),
@@ -63,16 +64,20 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                     ),
                   ),
                 ),
+                onSubmitted: (String value) {
+                  setState(() {
+                    _textController.text = value.trim();
+                  });
+                },
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 24, right: 24, top: 58),
-              child: WelcomeAuthenticationButton(
-                width: width,
+              child: MainButton(
                 message: 'Start Ordering',
-                destination: HomeScreen(
-                  consumerName: _textController.text,
-                ),
+                destination: _textController.text.isNotEmpty
+                    ? HomeScreen(consumerName: _textController.text)
+                    : AuthenticationScreen(),
               ),
             )
           ],

@@ -1,4 +1,4 @@
-import 'package:desafio_sprint2/components/welcome_auth_button.dart';
+import 'package:desafio_sprint2/components/main_button.dart';
 import 'package:desafio_sprint2/components/welcome_auth_image.dart';
 import 'package:desafio_sprint2/providers/configs.dart';
 import 'package:desafio_sprint2/screens/authentication.dart';
@@ -15,6 +15,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Settings settings = Provider.of<Settings>(context);
     settings.getSizes(context);
+    const String mainImagePath = 'assets/images/welcome_basket.png';
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -25,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
           ContainerImage(
             height: settings.height,
             width: settings.width,
-            imagePath: 'assets/images/welcome_basket.png',
+            imagePath: mainImagePath,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 40, bottom: 8, left: 24),
@@ -51,7 +52,7 @@ class WelcomeScreen extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.only(left: 24, right: 24, top: 80),
-            child: WelcomeAuthenticationButton(
+            child: MainButton(
               message: 'Let\'s Continue',
               destination: AuthenticationScreen(),
             ),

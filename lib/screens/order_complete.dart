@@ -1,4 +1,4 @@
-import 'package:desafio_sprint2/components/welcome_auth_button.dart';
+import 'package:desafio_sprint2/components/main_button.dart';
 import 'package:desafio_sprint2/screens/home.dart';
 import 'package:flutter/material.dart';
 
