@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    const Color standardFontColor = Color.fromRGBO(39, 33, 77, 1);
     Provider.debugCheckInvalidValueType = null;
     return MultiProvider(
       providers: [
@@ -25,8 +26,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'TT Norms Pro',
           textTheme: Theme.of(context).textTheme.apply(
-                bodyColor: const Color.fromRGBO(39, 33, 77, 1),
-                displayColor: const Color.fromRGBO(39, 33, 77, 1),
+                bodyColor: standardFontColor,
+                displayColor: standardFontColor,
               ),
         ),
         initialRoute: 'splash',
