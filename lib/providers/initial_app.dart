@@ -17,6 +17,15 @@ class InitialState extends ChangeNotifier {
         name: 'Honey lime combo',
         price: 2000,
         imagePath: 'assets/images/Honey-Lime.png',
+        ingredients: [
+          'Lime',
+          'Honey',
+          'Blueberries',
+          'Strawberries',
+          'Fresh Mint',
+        ],
+        message:
+            'If you are looking for a new fruit combo to eat today, Honey lime is the perfect brunch for you.',
       ),
     ),
     ComboFood(
@@ -24,6 +33,13 @@ class InitialState extends ChangeNotifier {
         name: 'Berry mango combo',
         price: 2000,
         imagePath: 'assets/images/Berry-Fruit.png',
+        ingredients: [
+          'Blueberries',
+          'Mango',
+          'Strawberries',
+        ],
+        message:
+            'If you are looking for a new combo to eat today, Berry mango is the perfect brunch for you.',
       ),
     ),
   ];
@@ -34,6 +50,17 @@ class InitialState extends ChangeNotifier {
         name: 'Quinoa fruit salad',
         price: 10000,
         imagePath: 'assets/images/quinoa-and-red-fruit-salad.png',
+        ingredients: [
+          'Red Quinoa',
+          'Lime',
+          'Honey',
+          'Blueberries',
+          'Mango',
+          'Strawberries',
+          'Fresh Mint',
+        ],
+        message:
+            'If you are looking for a new fruit salad to eat today, Quinoa is the perfect brunch for you.',
       ),
     ),
     FruitSalad(
@@ -41,6 +68,14 @@ class InitialState extends ChangeNotifier {
         name: 'Tropical fruit salad',
         price: 10000,
         imagePath: 'assets/images/Tropical-Fruit-Salad.png',
+        ingredients: [
+          'Lime',
+          'Honey',
+          'Mango',
+          'Fresh Mint',
+        ],
+        message:
+            'If you are looking for a new fruit salad to eat today, Tropical is the perfect brunch for you. make',
       ),
       index: 1,
     ),
@@ -49,6 +84,15 @@ class InitialState extends ChangeNotifier {
         name: 'Melon fruit salad',
         price: 10000,
         imagePath: 'assets/images/Kiwiberry-Fruit-Salad.png',
+        ingredients: [
+          'Melon',
+          'Honey',
+          'Blueberries',
+          'Mango',
+          'Strawberries',
+        ],
+        message:
+            'If you are looking for a new fruit salad to eat today, Melon is the perfect brunch for you. make',
       ),
       index: 2,
     )
@@ -66,6 +110,8 @@ class InitialState extends ChangeNotifier {
     if (quantity > 0) {
       for (int i = 0; i < quantity; i++) {
         basketList.add(item);
+        debugPrint(item.name);
+        notifyListeners();
       }
     }
   }
@@ -73,6 +119,7 @@ class InitialState extends ChangeNotifier {
   void removeBasket(Food item) {
     if (basketList.isNotEmpty) {
       basketList.remove(item);
+      notifyListeners();
     }
   }
 }

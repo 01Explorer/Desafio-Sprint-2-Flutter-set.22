@@ -1,4 +1,4 @@
-import 'package:desafio_sprint2/components/add_remove_button.dart';
+import 'package:desafio_sprint2/components/add_remove_button_food.dart';
 import 'package:desafio_sprint2/models/food.dart';
 import 'package:flutter/material.dart';
 
@@ -101,8 +101,9 @@ class _ComboFoodState extends State<ComboFood> {
                     ],
                   ),
                 ),
-                const AddRemoveButton(
+                AddRemoveButton(
                   imagePath: 'assets/images/plus_signal.png',
+                  item: widget.item,
                 )
               ],
             ),

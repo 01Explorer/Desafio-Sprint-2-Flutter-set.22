@@ -8,7 +8,7 @@ class GoBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => null,
+      onTap: () => Navigator.pop(context),
       child: Container(
         width: 75,
         height: 32,

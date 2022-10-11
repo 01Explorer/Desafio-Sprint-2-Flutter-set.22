@@ -1,3 +1,4 @@
+import 'package:desafio_sprint2/screens/order_list.dart';
 import 'package:flutter/material.dart';
 
 class ImageFloatingButton extends StatelessWidget {
@@ -15,7 +16,7 @@ class ImageFloatingButton extends StatelessWidget {
       child: FloatingActionButton(
         backgroundColor: Colors.white,
         child: Image.asset(imagePath),
-        onPressed: () => null,
+        onPressed: () => const OrderListScreen(),
       ),
     );
   }
