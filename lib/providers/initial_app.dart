@@ -53,4 +53,26 @@ class InitialState extends ChangeNotifier {
       index: 2,
     )
   ];
+
+  final List<Color> colorList = const [
+    Color.fromRGBO(255, 252, 242, 1),
+    Color.fromRGBO(254, 244, 244, 1),
+    Color.fromRGBO(241, 239, 246, 1),
+  ];
+
+  List<Food> basketList = [];
+
+  void addBasket(Food item, {int quantity = 1}) {
+    if (quantity > 0) {
+      for (int i = 0; i < quantity; i++) {
+        basketList.add(item);
+      }
+    }
+  }
+
+  void removeBasket(Food item) {
+    if (basketList.isNotEmpty) {
+      basketList.remove(item);
+    }
+  }
 }
