@@ -1,11 +1,11 @@
-import 'package:desafio_sprint2/components/add_remove_button_food.dart';
 import 'package:desafio_sprint2/components/blue_currency_text.dart';
 import 'package:desafio_sprint2/components/go_back_button.dart';
 import 'package:desafio_sprint2/components/main_button.dart';
 import 'package:desafio_sprint2/components/orders_list.dart';
-import 'package:desafio_sprint2/models/food.dart';
+import 'package:desafio_sprint2/providers/initial_app.dart';
 import 'package:desafio_sprint2/screens/order_complete.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class OrderListScreen extends StatefulWidget {
   const OrderListScreen({Key? key}) : super(key: key);
@@ -17,6 +17,7 @@ class OrderListScreen extends StatefulWidget {
 class _OrderListScreenState extends State<OrderListScreen> {
   @override
   Widget build(BuildContext context) {
+    final InitialState standard = Provider.of<InitialState>(context);
     return Scaffold(
       backgroundColor: const Color.fromRGBO(255, 164, 81, 1),
       body: Padding(
@@ -55,8 +56,8 @@ class _OrderListScreenState extends State<OrderListScreen> {
                         height: 56,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Padding(
+                          children: [
+                            const Padding(
                               padding: EdgeInsets.only(bottom: 4),
                               child: Text(
                                 'Total',
@@ -67,7 +68,7 @@ class _OrderListScreenState extends State<OrderListScreen> {
                               ),
                             ),
                             BlueCurrencyText(
-                              value: 60000,
+                              value: standard.sumTotal(),
                             )
                           ],
                         ),

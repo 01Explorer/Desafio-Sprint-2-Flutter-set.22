@@ -4,8 +4,6 @@ import 'package:desafio_sprint2/components/favorite_button.dart';
 import 'package:desafio_sprint2/components/go_back_button.dart';
 import 'package:desafio_sprint2/components/ingredients_chip.dart';
 import 'package:desafio_sprint2/components/line_highlight.dart';
-import 'package:desafio_sprint2/components/main_button.dart';
-import 'package:desafio_sprint2/components/orders_list.dart';
 import 'package:desafio_sprint2/models/food.dart';
 import 'package:desafio_sprint2/providers/configs.dart';
 import 'package:desafio_sprint2/providers/initial_app.dart';

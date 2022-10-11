@@ -16,7 +16,8 @@ class ImageFloatingButton extends StatelessWidget {
       child: FloatingActionButton(
         backgroundColor: Colors.white,
         child: Image.asset(imagePath),
-        onPressed: () => const OrderListScreen(),
+        onPressed: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const OrderListScreen())),
       ),
     );
   }

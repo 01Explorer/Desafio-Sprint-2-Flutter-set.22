@@ -119,7 +119,20 @@ class InitialState extends ChangeNotifier {
   void removeBasket(Food item) {
     if (basketList.isNotEmpty) {
       basketList.remove(item);
+      debugPrint(item.name);
       notifyListeners();
     }
+  }
+
+  double sumTotal() {
+    if (basketList.isNotEmpty) {
+      double total = 0;
+      for (var element in basketList) {
+        total += element.price;
+      }
+      return total;
+    }
+
+    return 0;
   }
 }
