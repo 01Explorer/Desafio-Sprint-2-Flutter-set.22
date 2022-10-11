@@ -41,7 +41,7 @@ class _AddToBasketState extends State<AddToBasket> {
                 height: 180,
                 child: Image.asset(
                   widget.item.imagePath,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
