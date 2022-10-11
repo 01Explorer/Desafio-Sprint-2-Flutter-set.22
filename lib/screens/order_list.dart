@@ -3,7 +3,6 @@ import 'package:desafio_sprint2/components/go_back_button.dart';
 import 'package:desafio_sprint2/components/main_button.dart';
 import 'package:desafio_sprint2/components/orders_list.dart';
 import 'package:desafio_sprint2/providers/initial_app.dart';
-import 'package:desafio_sprint2/screens/order_complete.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -73,12 +72,15 @@ class _OrderListScreenState extends State<OrderListScreen> {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        width: 199,
-                        child: MainButton(
-                          message: 'Checkout',
-                          destination: OrderComplete(),
-                          weight: FontWeight.w500,
+                      Visibility(
+                        visible: standard.sumTotal() > 0 ? true : false,
+                        child: const SizedBox(
+                          width: 199,
+                          child: MainButton(
+                            message: 'Checkout',
+                            destination: 'order-complete',
+                            weight: FontWeight.w500,
+                          ),
                         ),
                       )
                     ],

@@ -1,7 +1,6 @@
 import 'package:desafio_sprint2/components/main_button.dart';
 import 'package:desafio_sprint2/components/welcome_auth_image.dart';
 import 'package:desafio_sprint2/providers/configs.dart';
-import 'package:desafio_sprint2/screens/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -54,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
             padding: EdgeInsets.only(left: 24, right: 24, top: 80),
             child: MainButton(
               message: 'Let\'s Continue',
-              destination: AuthenticationScreen(),
+              destination: 'authentication',
             ),
           )
         ],

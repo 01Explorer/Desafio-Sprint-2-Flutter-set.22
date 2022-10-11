@@ -4,6 +4,8 @@ import 'package:desafio_sprint2/models/food.dart';
 import 'package:flutter/material.dart';
 
 class InitialState extends ChangeNotifier {
+  String consumerName = '';
+
   List<String> comboOptions = [
     'All',
     'Salad Combo',

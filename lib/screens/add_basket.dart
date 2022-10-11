@@ -7,7 +7,6 @@ import 'package:desafio_sprint2/components/line_highlight.dart';
 import 'package:desafio_sprint2/models/food.dart';
 import 'package:desafio_sprint2/providers/configs.dart';
 import 'package:desafio_sprint2/providers/initial_app.dart';
-import 'package:desafio_sprint2/screens/order_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -185,11 +184,7 @@ class _AddToBasketState extends State<AddToBasket> {
                                   onTap: () {
                                     standard.addBasket(widget.item,
                                         quantity: quantity);
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (_) =>
-                                                const OrderListScreen()));
+                                    Navigator.pushNamed(context, 'order-list');
                                   },
                                   child: Container(
                                     height: 56,

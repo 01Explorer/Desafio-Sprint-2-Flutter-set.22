@@ -1,7 +1,7 @@
 import 'package:desafio_sprint2/components/main_button.dart';
 import 'package:desafio_sprint2/components/welcome_auth_image.dart';
 import 'package:desafio_sprint2/providers/configs.dart';
-import 'package:desafio_sprint2/screens/home.dart';
+import 'package:desafio_sprint2/providers/initial_app.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,6 +18,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
   @override
   Widget build(BuildContext context) {
     final Settings settings = Provider.of<Settings>(context);
+    final InitialState standard = Provider.of<InitialState>(context);
     const String mainImagePath = 'assets/images/authentication_basket.png';
     return Scaffold(
       backgroundColor: Colors.white,
@@ -67,6 +68,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                 onSubmitted: (String value) {
                   setState(() {
                     _textController.text = value.trim();
+                    standard.consumerName = _textController.text;
                   });
                 },
               ),
@@ -75,9 +77,9 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
               padding: const EdgeInsets.only(left: 24, right: 24, top: 58),
               child: MainButton(
                 message: 'Start Ordering',
-                destination: _textController.text.isNotEmpty
-                    ? HomeScreen(consumerName: _textController.text)
-                    : AuthenticationScreen(),
+                destination:
+                    _textController.text.isNotEmpty ? 'home' : 'authentication',
+                args: _textController.text,
               ),
             )
           ],

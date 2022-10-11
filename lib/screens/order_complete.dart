@@ -1,6 +1,7 @@
 import 'package:desafio_sprint2/components/main_button.dart';
-import 'package:desafio_sprint2/screens/home.dart';
+import 'package:desafio_sprint2/providers/initial_app.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class OrderComplete extends StatelessWidget {
   const OrderComplete({super.key});
@@ -11,6 +12,7 @@ class OrderComplete extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final InitialState standard = Provider.of<InitialState>(context);
     return Scaffold(
       body: Center(
         child: Column(
@@ -37,28 +39,26 @@ class OrderComplete extends StatelessWidget {
                 color: Color.fromRGBO(17, 17, 17, 1),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 56, bottom: 24),
+            Padding(
+              padding: const EdgeInsets.only(top: 56, bottom: 24),
               child: SizedBox(
                 width: 208,
                 child: MainButton(
                   message: 'Track Order',
-                  destination: HomeScreen(
-                    consumerName: 'Gabriel',
-                  ),
+                  destination: 'home',
+                  args: standard.consumerName,
                   weight: FontWeight.w500,
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: 183,
               child: MainButton(
                 message: 'Continue shopping',
-                destination: HomeScreen(
-                  consumerName: 'Gabriel',
-                ),
-                color: Color.fromRGBO(252, 246, 240, 1),
-                textColor: Color.fromRGBO(240, 134, 38, 1),
+                destination: 'home',
+                args: standard.consumerName,
+                color: const Color.fromRGBO(252, 246, 240, 1),
+                textColor: const Color.fromRGBO(240, 134, 38, 1),
               ),
             )
           ],

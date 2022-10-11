@@ -1,6 +1,6 @@
 import 'package:desafio_sprint2/providers/configs.dart';
 import 'package:desafio_sprint2/providers/initial_app.dart';
-import 'package:desafio_sprint2/screens/welcome.dart';
+import 'package:desafio_sprint2/router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,15 +21,17 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => InitialState()),
       ],
       child: MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            fontFamily: 'TT Norms Pro',
-            textTheme: Theme.of(context).textTheme.apply(
-                  bodyColor: const Color.fromRGBO(39, 33, 77, 1),
-                  displayColor: const Color.fromRGBO(39, 33, 77, 1),
-                ),
-          ),
-          home: WelcomeScreen()),
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          fontFamily: 'TT Norms Pro',
+          textTheme: Theme.of(context).textTheme.apply(
+                bodyColor: const Color.fromRGBO(39, 33, 77, 1),
+                displayColor: const Color.fromRGBO(39, 33, 77, 1),
+              ),
+        ),
+        initialRoute: 'splash',
+        onGenerateRoute: RouteGenerator.generateRoute,
+      ),
     );
   }
 }
