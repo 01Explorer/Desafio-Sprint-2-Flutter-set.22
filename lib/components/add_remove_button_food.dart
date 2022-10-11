@@ -18,6 +18,12 @@ class AddRemoveButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SnackBar snackBar = SnackBar(
+      content: Text(imagePath.contains('plus')
+          ? 'Item added to the basket'
+          : 'Item removed from the basket'),
+      duration: const Duration(milliseconds: 500),
+    );
     final InitialState standard = Provider.of<InitialState>(context);
     return InkWell(
       onTap: () {
@@ -26,6 +32,7 @@ class AddRemoveButton extends StatelessWidget {
         } else {
           standard.removeBasket(item);
         }
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
       },
       child: Container(
         width: contWidth,
